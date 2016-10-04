@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import store from './vuex/store'
+import { store } from 'lib/store'
 import Menu from './components/Menu.vue'
 
 export default {
@@ -38,6 +38,7 @@ export default {
 <style>
 html {
   height: 100%;
+  display:
 }
 
 body {

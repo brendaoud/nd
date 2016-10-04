@@ -1,27 +1,18 @@
 <template>
   <div class="bar">
     <h1>Bar</h1>
-    <p>\{{ count }}</p>
-    <button @click='decrementCounter'>-</button>
-    <button @click='incrementCounter'>+</button>
+    <p>\{{ getCount }}</p>
+    <button @click='decrement'>-</button>
+    <button @click='increment'>+</button>
   </div>
 </template>
 
 <script>
-import { decrementCounter, incrementCounter } from '../vuex/actions'
-import { getCount } from '../vuex/getters'
+import { actions, getters } from 'lib/store'
 
 export default {
   name: 'Bar',
-  vuex: {
-    getters: {
-      count: getCount
-    },
-    actions: {
-      decrementCounter,
-      incrementCounter
-    }
-  }
+  vuex: { getters, actions }
 }
 </script>
 

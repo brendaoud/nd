@@ -1,33 +1,22 @@
 <template>
   <div class="foo">
     <h1>Foo</h1>
-    <p>\{{ count }}</p>
-    <button @click='decrementCounter'>-</button>
-    <button @click='incrementCounter'>+</button>
+    <p>\{{ getCount }}</p>
+    <button @click='decrement'>-</button>
+    <button @click='increment'>+</button>
   </div>
 </template>
 
 <script>
-import { decrementCounter, incrementCounter } from '../vuex/actions'
-import { getCount } from '../vuex/getters'
+import { actions, getters } from 'lib/store'
 
 export default {
   name: 'Foo',
-  vuex: {
-    getters: {
-      count: getCount
-    },
-    actions: {
-      decrementCounter,
-      incrementCounter
-    }
-  }
+  vuex: { getters, actions }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1 {
-  color: #42b983;
-}
+h1 { color: #42b983; }
 </style>
